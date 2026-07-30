@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sell Your Property Fast | Motiv8d Consulting, LLC</title>
+<title>Motiv8d Consulting, LLC – Wholesale Real Estate</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <script src="https://www.google.com/recaptcha/api.js?render=6Ld28SAtAAAAAAU4qqMfLvOeqGm2MuZ08hx24BuT"></script>
 <style>
@@ -21,7 +21,6 @@
     --text: #E8E8E8;
     --text-muted: #6B7280;
     --border: rgba(201,164,74,0.18);
-    --border-card: #2A2F3E;
     --radius: 6px;
   }
 
@@ -116,7 +115,7 @@
     transition: background 0.2s !important;
   }
 
-  .nav-cta:hover { background: var(--gold-light) !important; }
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
 
   /* ── HERO ── */
   .hero {
@@ -136,8 +135,20 @@
     inset: 0;
     background:
       radial-gradient(ellipse 70% 50% at 50% 0%, rgba(42,47,62,0.8) 0%, transparent 70%),
-      repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(201,164,74,0.04) 60px, rgba(201,164,74,0.04) 61px),
-      repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(201,164,74,0.04) 60px, rgba(201,164,74,0.04) 61px);
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 60px,
+        rgba(201,164,74,0.04) 60px,
+        rgba(201,164,74,0.04) 61px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 60px,
+        rgba(201,164,74,0.04) 60px,
+        rgba(201,164,74,0.04) 61px
+      );
   }
 
   .hero-inner { position: relative; max-width: 820px; }
@@ -171,7 +182,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto 2rem;
-    box-shadow: 0 0 60px rgba(201,164,74,0.2);
+    box-shadow: 0 0 60px rgba(201,164,74,0.22);
   }
 
   .hero-logo-large svg { width: 58px; height: 58px; }
@@ -219,7 +230,7 @@
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
 
   .btn-secondary {
-    border: 1px solid #2A2F3E;
+    border: 1px solid var(--border);
     color: var(--text);
     padding: 0.9rem 2.2rem;
     border-radius: var(--radius);
@@ -242,7 +253,7 @@
     max-width: 600px;
   }
 
-  /* ── WHY US ── */
+  /* ── MISSION ── */
   .section {
     padding: 5rem 2rem;
     max-width: 1100px;
@@ -257,16 +268,18 @@
     margin-bottom: 1rem;
   }
 
-  .why-grid {
+  .mission-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
   }
 
-  @media (max-width: 700px) { .why-grid { grid-template-columns: 1fr; gap: 2rem; } }
+  @media (max-width: 700px) {
+    .mission-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
 
-  .why-headline {
+  .mission-headline {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
     line-height: 1;
@@ -275,53 +288,46 @@
     margin-bottom: 1.5rem;
   }
 
-  .why-headline .accent { color: var(--gold); }
+  .mission-headline .accent { color: var(--gold); }
 
-  .why-body {
+  .mission-body {
     color: var(--text-muted);
     line-height: 1.8;
     font-size: 1rem;
     font-weight: 300;
   }
 
-  .why-body strong { color: var(--text); font-weight: 500; }
+  .mission-body strong {
+    color: var(--text);
+    font-weight: 500;
+  }
 
-  .benefits-list {
-    display: flex;
-    flex-direction: column;
+  .mission-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
 
-  .benefit-item {
+  .stat-card {
     background: var(--surface);
     border: 1px solid #2A2F3E;
     border-radius: var(--radius);
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+    padding: 1.5rem;
   }
 
-  .benefit-icon {
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
     color: var(--gold);
-    font-size: 1.2rem;
-    flex-shrink: 0;
-    margin-top: 2px;
+    line-height: 1;
+    margin-bottom: 0.4rem;
   }
 
-  .benefit-title {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.2rem;
-    letter-spacing: 0.03em;
-  }
-
-  .benefit-desc {
-    font-size: 0.82rem;
+  .stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
     color: var(--text-muted);
-    font-weight: 300;
-    line-height: 1.6;
   }
 
   /* ── HOW IT WORKS ── */
@@ -373,15 +379,21 @@
     .step:last-child { border-bottom: none; }
   }
 
-  /* ── FORM ── */
+  /* ── FORM SECTION ── */
   .form-section-bg {
     background: var(--black);
     padding: 5rem 2rem;
   }
 
-  .form-wrapper { max-width: 820px; margin: 0 auto; }
+  .form-wrapper {
+    max-width: 820px;
+    margin: 0 auto;
+  }
 
-  .form-header { text-align: center; margin-bottom: 3rem; }
+  .form-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
 
   .form-headline {
     font-family: 'Bebas Neue', sans-serif;
@@ -407,7 +419,9 @@
     padding: 3rem;
   }
 
-  @media (max-width: 600px) { .intake-form { padding: 1.5rem; } }
+  @media (max-width: 600px) {
+    .intake-form { padding: 1.5rem; }
+  }
 
   .form-grid {
     display: grid;
@@ -415,7 +429,9 @@
     gap: 1.25rem;
   }
 
-  @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; }
+  }
 
   .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
   .form-group.full { grid-column: 1 / -1; }
@@ -445,10 +461,13 @@
   }
 
   input::placeholder, textarea::placeholder { color: var(--text-muted); }
-  input:focus, select:focus, textarea:focus { border-color: var(--gold); }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--gold);
+  }
 
   select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23C9A44A' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23C9A84C' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 1rem center;
     padding-right: 2.5rem;
@@ -456,7 +475,8 @@
   }
 
   select option { background: var(--surface2); color: var(--text); }
-  textarea { resize: vertical; min-height: 90px; }
+
+  textarea { resize: vertical; min-height: 80px; }
 
   .submit-btn {
     width: 100%;
@@ -485,16 +505,6 @@
     margin-top: 1rem;
   }
 
-  /* ── SUCCESS ── */
-  .success-msg { display: none; text-align: center; padding: 3rem 2rem; }
-  .success-msg h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    color: var(--gold);
-    margin-bottom: 0.75rem;
-  }
-  .success-msg p { color: var(--text-muted); font-weight: 300; }
-
   /* ── FOOTER ── */
   footer {
     background: var(--near-black);
@@ -511,7 +521,11 @@
     gap: 1.5rem;
   }
 
-  .footer-logo { display: flex; align-items: center; gap: 12px; }
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
 
   .footer-logo-mark {
     width: 36px;
@@ -532,7 +546,10 @@
     color: var(--text);
   }
 
-  .social-links { display: flex; gap: 1rem; }
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
 
   .social-link {
     width: 40px;
@@ -546,101 +563,125 @@
     transition: border-color 0.2s, background 0.2s;
   }
 
-  .social-link:hover { border-color: var(--gold); background: rgba(201,164,74,0.1); }
-  .social-link svg { width: 17px; height: 17px; fill: var(--text-muted); transition: fill 0.2s; }
+  .social-link:hover {
+    border-color: var(--gold);
+    background: rgba(201,164,74,0.1);
+  }
+
+  .social-link svg {
+    width: 17px;
+    height: 17px;
+    fill: var(--text-muted);
+    transition: fill 0.2s;
+  }
+
   .social-link:hover svg { fill: var(--gold); }
 
-  .footer-copy { font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.05em; }
+  .footer-copy {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
 
-  /* ── ANIMATIONS ── */
+  /* ── SUCCESS MESSAGE ── */
+  .success-msg {
+    display: none;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .success-msg h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .success-msg p {
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  /* ── SCROLL ANIMATIONS ── */
   .fade-up {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="/" class="nav-logo">
+  <a href="#" class="nav-logo">
     <img src="https://raw.githubusercontent.com/Remyjr85/motiv8d-landing/main/logo.png" alt="Motiv8d Consulting Logo" style="height:48px; width:auto;" />
   </a>
   <ul class="nav-links">
-    <li><a href="#why">Why Us</a></li>
+    <li><a href="#mission">About</a></li>
     <li><a href="#how">Process</a></li>
-    <li><a href="#form" class="nav-cta">Get My Offer</a></li>
+    <li><a href="#intake" class="nav-cta">Join Buyer List</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-inner">
-    <div class="hero-eyebrow">Upstate SC — We Buy Properties</div>
+    <div class="hero-eyebrow">Greenville, SC Wholesale Real Estate</div>
 
     <div class="hero-logo-large" style="background:none; box-shadow:none;">
       <img src="https://raw.githubusercontent.com/Remyjr85/motiv8d-landing/main/logo.png" alt="Motiv8d Consulting Logo" style="width:160px; height:auto;" />
     </div>
 
     <h1>
-      Sell Fast.<br>
-      <span class="accent">No Agents.</span><br>
-      No Hassle.
+      Deals That <br><span class="accent">Move Fast.</span><br>
+      Buyers Who Win.
     </h1>
 
     <p class="hero-sub">
-      Motiv8d Consulting buys properties as-is across Upstate South Carolina. No repairs, no commissions, no waiting. Just a fair cash offer and a fast closing on your timeline.
+      Motiv8d Consulting connects serious real estate investors with deeply discounted off-market properties across the Upstate South Carolina market.
     </p>
 
     <div class="hero-cta">
-      <a href="#form" class="btn-primary">Get My Cash Offer</a>
-      <a href="#why" class="btn-secondary">How It Works</a>
+      <a href="#intake" class="btn-primary">Join Our Buyer List</a>
+      <a href="#mission" class="btn-secondary">Learn More</a>
     </div>
   </div>
 </section>
 
-<!-- WHY US -->
-<section class="section" id="why">
-  <div class="why-grid">
+<!-- MISSION -->
+<section class="section" id="mission">
+  <div class="mission-grid">
     <div class="fade-up">
-      <p class="section-label">Why Motiv8d</p>
-      <h2 class="why-headline">We Make Selling <span class="accent">Simple</span></h2>
-      <p class="why-body">
-        Whether you're facing foreclosure, inherited a property, dealing with a difficult tenant, or just need to sell quickly — <strong>we have a solution</strong>. We buy properties in any condition, in any situation, with no agent fees and no repairs required.
+      <p class="section-label">Our Mission</p>
+      <h2 class="mission-headline">Built to <span class="accent">Motivate</span> Every Party to the Table</h2>
+      <p class="mission-body">
+        At Motiv8d Consulting, we believe every real estate transaction should create real value — for the seller, the buyer, and the community. We specialize in sourcing <strong>deeply discounted off-market properties</strong> throughout the Upstate SC market and connecting them with qualified investors ready to close.
         <br><br>
-        We're a <strong>local Greenville, SC business</strong> — not a national corporation. You'll deal with real people who understand the Upstate market and are committed to making the process as smooth as possible.
+        Our approach is straightforward: <strong>honest deals, fast closings, and long-term relationships</strong>. We don't chase volume — we chase the right fit. Every property we bring to our buyers has been analyzed for equity, ARV, and investor potential.
       </p>
     </div>
-    <div class="benefits-list fade-up">
-      <div class="benefit-item">
-        <div class="benefit-icon">⚡</div>
-        <div>
-          <div class="benefit-title">Fast Closing</div>
-          <div class="benefit-desc">Close in as little as 7–14 days — or on your timeline. You pick the date.</div>
-        </div>
+    <div class="mission-stats fade-up">
+      <div class="stat-card">
+        <div class="stat-number">SC</div>
+        <div class="stat-label">Upstate Market Focus</div>
       </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">🔨</div>
-        <div>
-          <div class="benefit-title">As-Is Purchase</div>
-          <div class="benefit-desc">No repairs, no cleaning, no staging. We buy the property exactly as it sits.</div>
-        </div>
+      <div class="stat-card">
+        <div class="stat-number">OFF</div>
+        <div class="stat-label">Market Properties Only</div>
       </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">💰</div>
-        <div>
-          <div class="benefit-title">Zero Fees or Commissions</div>
-          <div class="benefit-desc">No agent commissions, no closing costs on your end. What we offer is what you get.</div>
-        </div>
+      <div class="stat-card">
+        <div class="stat-number">48H</div>
+        <div class="stat-label">Avg. Response Time</div>
       </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">🤝</div>
-        <div>
-          <div class="benefit-title">Any Situation</div>
-          <div class="benefit-desc">Foreclosure, probate, divorce, relocation, vacant property — we've seen it all and can help.</div>
-        </div>
+      <div class="stat-card">
+        <div class="stat-number">LLC</div>
+        <div class="stat-label">Fully Licensed Entity</div>
       </div>
     </div>
   </div>
@@ -655,45 +696,39 @@
     <div class="steps-grid">
       <div class="step fade-up">
         <div class="step-num">01</div>
-        <div class="step-title">Tell Us About Your Property</div>
-        <div class="step-desc">Fill out the short form below with your property details. Takes less than 2 minutes.</div>
+        <div class="step-title">Join Our List</div>
+        <div class="step-desc">Complete the buyer intake form below with your investment criteria so we match you to the right deals.</div>
       </div>
       <div class="step fade-up">
         <div class="step-num">02</div>
-        <div class="step-title">We Run the Numbers</div>
-        <div class="step-desc">We analyze your property and reach out within 24–48 hours with a fair, no-obligation cash offer.</div>
+        <div class="step-title">Get Matched</div>
+        <div class="step-desc">We send properties that fit your buy box — ARV, location, rehab level, and price point — directly to your inbox.</div>
       </div>
       <div class="step fade-up">
         <div class="step-num">03</div>
-        <div class="step-title">Review Your Offer</div>
-        <div class="step-desc">No pressure. Take your time reviewing the offer. We answer every question you have.</div>
+        <div class="step-title">Review & POF</div>
+        <div class="step-desc">Tour the deal, submit your proof of funds, and move to contract. We keep it simple and transparent.</div>
       </div>
       <div class="step fade-up">
         <div class="step-num">04</div>
-        <div class="step-title">Close & Get Paid</div>
-        <div class="step-desc">We close with a reputable SC title company. You walk away with cash in hand on your schedule.</div>
+        <div class="step-title">Close & Profit</div>
+        <div class="step-desc">We facilitate a clean closing with a reputable SC title company and get you to the closing table fast.</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SELLER FORM -->
-<div class="form-section-bg" id="form">
+<!-- INTAKE FORM -->
+<div class="form-section-bg" id="intake">
   <div class="form-wrapper">
     <div class="form-header fade-up">
-      <p class="section-label">Seller Intake</p>
-      <h2 class="form-headline">Get Your <span class="accent">Cash Offer</span></h2>
-      <p class="form-sub">Fill out the form below and we'll reach out within 24–48 hours with a no-obligation offer.</p>
+      <p class="section-label">Buyer Intake</p>
+      <h2 class="form-headline">Join Our <span class="accent">Investor Network</span></h2>
+      <p class="form-sub">Fill out your criteria once and we'll send you deals that match your buy box — no noise, no fluff.</p>
     </div>
 
     <div class="intake-form fade-up" id="form-container">
-      <div class="form-grid">
-
-        <!-- HONEYPOT -->
-        <div class="form-group full" style="display:none !important; position:absolute; left:-9999px;" aria-hidden="true">
-          <label for="website">Website</label>
-          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
-        </div>
+      <div class="form-grid" id="actual-form">
 
         <div class="form-group">
           <label for="name">Full Name</label>
@@ -702,12 +737,38 @@
 
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="john@email.com" required />
+          <input type="email" id="email" placeholder="john@company.com" required />
         </div>
 
         <div class="form-group">
           <label for="phone">Phone Number</label>
           <input type="tel" id="phone" placeholder="(864) 555-0100" />
+        </div>
+
+        <div class="form-group">
+          <label for="llc">LLC / Company Name</label>
+          <input type="text" id="llc" placeholder="Smith Capital LLC" />
+        </div>
+
+        <div class="form-group">
+          <label for="funding">Funding Type</label>
+          <select id="funding">
+            <option value="" disabled selected>Select one</option>
+            <option>Cash</option>
+            <option>Hard Money / Private Lending</option>
+            <option>Conventional Financing</option>
+            <option>Combination</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="max-price">Max Purchase Price</label>
+          <input type="text" id="max-price" placeholder="e.g. $150,000" />
+        </div>
+
+        <div class="form-group full">
+          <label for="areas">Areas Buying (Cities / Zip Codes)</label>
+          <input type="text" id="areas" placeholder="e.g. Greenville, Spartanburg, Greer, Anderson…" />
         </div>
 
         <div class="form-group">
@@ -718,91 +779,56 @@
             <option>Multi-Family (2-4 units)</option>
             <option>Multi-Family (5+ units)</option>
             <option>Commercial</option>
-            <option>Land / Lot</option>
-            <option>Mobile Home</option>
+            <option>Land / Lots</option>
+            <option>Any / All</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="rehab">Rehab Level</label>
+          <select id="rehab">
+            <option value="" disabled selected>Select one</option>
+            <option>Turnkey / Light Cosmetic</option>
+            <option>Moderate (some systems)</option>
+            <option>Heavy Rehab</option>
+            <option>Full Gut / Teardown</option>
+            <option>Any Level</option>
           </select>
         </div>
 
         <div class="form-group full">
-          <label for="address">Property Address</label>
-          <input type="text" id="address" placeholder="123 Main St" required />
-        </div>
-
-        <div class="form-group">
-          <label for="city">City</label>
-          <input type="text" id="city" placeholder="Greenville" />
-        </div>
-
-        <div class="form-group">
-          <label for="zip">Zip Code</label>
-          <input type="text" id="zip" placeholder="29601" />
-        </div>
-
-        <div class="form-group">
-          <label for="asking-price">Asking Price (if you have one)</label>
-          <input type="text" id="asking-price" placeholder="e.g. $120,000 or Flexible" />
-        </div>
-
-        <div class="form-group">
-          <label for="mortgage">Mortgage Balance</label>
-          <select id="mortgage">
+          <label for="deals-closed">Number of Deals Closed Last Year</label>
+          <select id="deals-closed">
             <option value="" disabled selected>Select one</option>
-            <option>Paid Off / Free & Clear</option>
-            <option>Less than $50,000</option>
-            <option>$50,000 – $100,000</option>
-            <option>$100,000 – $200,000</option>
-            <option>Over $200,000</option>
-            <option>Not Sure</option>
+            <option>0 – Just Getting Started</option>
+            <option>1 – 5</option>
+            <option>6 – 15</option>
+            <option>16 – 30</option>
+            <option>30+</option>
           </select>
         </div>
 
-        <div class="form-group">
-          <label for="condition">Property Condition</label>
-          <select id="condition">
-            <option value="" disabled selected>Select one</option>
-            <option>Move-In Ready</option>
-            <option>Needs Light Cosmetic Work</option>
-            <option>Needs Moderate Repairs</option>
-            <option>Needs Major Repairs / Full Rehab</option>
-            <option>Uninhabitable</option>
-          </select>
-        </div>
 
-        <div class="form-group">
-          <label for="timeline">Timeline to Sell</label>
-          <select id="timeline">
-            <option value="" disabled selected>Select one</option>
-            <option>ASAP — Within 2 Weeks</option>
-            <option>Within 30 Days</option>
-            <option>Within 60–90 Days</option>
-            <option>Flexible / No Rush</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="agent">Working With an Agent?</label>
-          <select id="agent">
-            <option value="" disabled selected>Select one</option>
-            <option>No</option>
-            <option>Yes</option>
-            <option>Not Sure</option>
-          </select>
+        <!-- HONEYPOT — hidden from humans, bots fill it in -->
+        <div class="form-group full" style="display:none !important; position:absolute; left:-9999px;" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
         </div>
 
         <div class="form-group full">
-          <label for="motivation">Why Are You Selling?</label>
-          <textarea id="motivation" placeholder="e.g. Relocating, inherited property, behind on payments, tired landlord…"></textarea>
+          <label for="qualify">What is your typical offer formula? (e.g. ARV × 70% − repairs)</label>
+          <input type="text" id="qualify" placeholder="Describe how you calculate your max offer…" />
         </div>
 
       </div>
 
-      <button class="submit-btn" onclick="handleSubmit()">Submit & Get My Offer →</button>
-      <p class="form-note">Your info is kept private. No obligation. We'll reach out within 24–48 hours.</p>
+      <button class="submit-btn" onclick="handleSubmit()">Submit My Buyer Profile →</button>
+      <p class="form-note">Your info is kept private and used only to match you with relevant deals.</p>
     </div>
 
     <div class="success-msg" id="success-msg">
-      <h3>We Got Your Submission!</h3>
-      <p>Thank you for reaching out. A member of the Motiv8d Consulting team will contact you within 24–48 hours with your cash offer.</p>
+      <h3>You're on the List!</h3>
+      <p>Welcome to the Motiv8d Consulting investor network. We'll be in touch as soon as a deal matches your buy box.</p>
     </div>
   </div>
 </div>
@@ -815,14 +841,23 @@
     </div>
 
     <div class="social-links">
+      <!-- Facebook -->
       <a href="https://facebook.com" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
-        <svg viewBox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+        </svg>
       </a>
+      <!-- Instagram -->
       <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
-        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
       </a>
+      <!-- LinkedIn -->
       <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
       </a>
     </div>
 
@@ -831,24 +866,36 @@
 </footer>
 
 <script>
-  const SUPABASE_URL     = 'https://yxlxfkahedgriepnjumm.supabase.co';
+  const SUPABASE_URL    = 'https://yxlxfkahedgriepnjumm.supabase.co';
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl4bHhma2FoZWRncmllcG5qdW1tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA3NjAzNTksImV4cCI6MjA5NjMzNjM1OX0.sUdgyAKm5qVPwY4AGIkHZUiOV9O4ZEEC7u1CwJVcrdg';
   const RECAPTCHA_SITE_KEY = '6Ld28SAtAAAAAAU4qqMfLvOeqGm2MuZ08hx24BuT';
+  // Minimum reCAPTCHA score to allow submission (0.0 = bot, 1.0 = human)
+  const RECAPTCHA_THRESHOLD = 0.5;
 
   async function handleSubmit() {
-    const name    = document.getElementById('name').value.trim();
-    const email   = document.getElementById('email').value.trim();
-    const address = document.getElementById('address').value.trim();
+    const name  = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
 
-    if (!name || !email || !address) {
-      alert('Please enter your name, email, and property address.');
+    // Basic validation
+    if (!name || !email) {
+      alert('Please enter at least your name and email.');
       return;
     }
 
     // ── HONEYPOT CHECK ──
-    if (document.getElementById('website').value) {
+    // If the hidden "website" field has any value, it's a bot — reject silently
+    const honeypot = document.getElementById('website').value;
+    if (honeypot) {
+      // Fake success to not tip off bots
       document.getElementById('form-container').style.display = 'none';
       document.getElementById('success-msg').style.display = 'block';
+      return;
+    }
+
+    // ── QUALIFYING QUESTION CHECK ──
+    const qualify = document.getElementById('qualify').value.trim();
+    if (qualify.length < 10) {
+      alert('Please describe your offer formula — this helps us match you to the right deals.');
       return;
     }
 
@@ -857,38 +904,37 @@
     btn.disabled = true;
 
     try {
-      // ── reCAPTCHA v3 ──
-      const recaptchaToken = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'seller_intake' });
+      // ── reCAPTCHA v3 CHECK ──
+      const recaptchaToken = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'buyer_intake' });
+
+      // Verify score via Supabase Edge Function (or skip if not set up — see note below)
+      // For now we include the token in the payload so you can verify server-side later
+      // Score verification requires a backend — the token alone is enough to log intent
 
       btn.textContent = 'Submitting…';
 
-      // Build notes from seller details
-      const askingRaw = document.getElementById('asking-price').value.trim();
-      const askingNum = askingRaw ? parseFloat(askingRaw.replace(/[^0-9.]/g, '')) || null : null;
-
+      // Build notes string from buyer criteria
       const notes = [
+        `LLC: ${document.getElementById('llc').value.trim() || 'N/A'}`,
+        `Funding: ${document.getElementById('funding').value || 'N/A'}`,
+        `Max Purchase Price: ${document.getElementById('max-price').value.trim() || 'N/A'}`,
+        `Areas Buying: ${document.getElementById('areas').value.trim() || 'N/A'}`,
         `Property Type: ${document.getElementById('prop-type').value || 'N/A'}`,
-        `Mortgage Balance: ${document.getElementById('mortgage').value || 'N/A'}`,
-        `Condition: ${document.getElementById('condition').value || 'N/A'}`,
-        `Timeline: ${document.getElementById('timeline').value || 'N/A'}`,
-        `Working with Agent: ${document.getElementById('agent').value || 'N/A'}`,
-        `Motivation: ${document.getElementById('motivation').value.trim() || 'N/A'}`
+        `Rehab Level: ${document.getElementById('rehab').value || 'N/A'}`,
+        `Deals Closed Last Year: ${document.getElementById('deals-closed').value || 'N/A'}`,
+        `Offer Formula: ${qualify}`
       ].join(' | ');
 
       const payload = {
-        type:         'seller',
-        source:       'landing_page',
-        user_id:      '3456c59b-0e54-437b-8989-4270077aa026',
-        name:         name,
-        email:        email,
-        phone:        document.getElementById('phone').value.trim() || null,
-        address:      address,
-        city:         document.getElementById('city').value.trim()  || null,
-        state:        'SC',
-        zip:          document.getElementById('zip').value.trim()   || null,
-        asking_price: askingNum,
-        notes:        notes,
-        status:       'new',
+        type:    'buyer',
+        source:  'landing_page',
+        user_id: '3456c59b-0e54-437b-8989-4270077aa026',
+        name:    name,
+        email:   email,
+        phone:   document.getElementById('phone').value.trim() || null,
+        state:   'SC',
+        notes:   notes,
+        status:  'new',
         created_date: new Date().toISOString().split('T')[0]
       };
 
@@ -915,8 +961,8 @@
 
     } catch (err) {
       console.error('Submission error:', err);
-      alert('Something went wrong. Please try again or call us directly.');
-      btn.textContent = 'Submit & Get My Offer →';
+      alert('Something went wrong submitting your info. Please try again or contact us directly.');
+      btn.textContent = 'Submit My Buyer Profile →';
       btn.disabled = false;
     }
   }
